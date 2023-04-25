@@ -2,9 +2,10 @@ import { View, Text, FlatList } from 'react-native'
 import React from 'react'
 import CardImage from './CardImage'
 import { styles } from '../theme/theme'
+
 const ImageList = ({photos}) => {
 
-    const renderItem = (({item}) => <CardImage image={item}/>)
+    const renderItem = (({item}) => <CardImage image={item.url}/>)
 
   return (
     
@@ -12,7 +13,7 @@ const ImageList = ({photos}) => {
       <FlatList
       data={photos}
       renderItem={renderItem}
-      keyExtractor={item => item.id}
+      keyExtractor={item => item._id}
       numColumns={2}
       />
     </View>

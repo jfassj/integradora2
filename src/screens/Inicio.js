@@ -20,7 +20,7 @@ const Inicio = ({navigation}) => {
       </Pressable>
       <Pressable
         style={styles.button_inicio}
-        onPress={'http://dronautica.space/'}  
+        onPress={() => navigation.navigate('')}  
       >
         <Text
         style={styles.text3}><Ionicons name="help-circle-outline" size={20} color={'white'}/> Ayuda</Text>

@@ -9,7 +9,7 @@ import axios from 'axios';
      usuario:'',
      password: '',
  }
-const Login = ({props}) => {
+const Login = (props) => {
      const [datos, setDatos] = useState(initialState);
      const {usuario, password} = datos;
  const LOGIN_IMAGE = Image.resolveAssetSource(logInImage).uri;
@@ -21,19 +21,24 @@ const Login = ({props}) => {
    }
 
    const handleSubmit = async () => {
-       await axios.post('http://10.0.2.2:5000/authenticate', datos)
+    console.log('AQUI3');
+       await axios.post('http://192.168.1.3:5000/authenticate', datos)
+       
        .then(function (response) {
          // handle success
-          console.log(JSON.stringify(response.data.resultado));
-		if(response.status === 200) {
-			setDatos(initialState);
-	 		context.signIn(response.data.resultado);
-	 		props.navigation.navigate('StackNavigation2');
-	 	}
+    console.log(response);
+    console.log(response.data.resultado.user)
+     console.log(response.status);     
+		  if(response.status === 200) {
+		  	setDatos(initialState);
+	 	  	context.signIn(response.data.resultado.user);
+	 	  	props.navigation.navigate('BottomTab');
+      }
        })
        .catch(function (error) {
          // handle error
-         console.log(JSON.stringify(error));
+        //  console.log(JSON.stringify(error));
+        console.log('AQUI2');
        })
        .finally(function () {
          // ToastAndroid.show('operación terminada', ToastAndroid.SHORT);
@@ -70,7 +75,7 @@ const Login = ({props}) => {
         </View>
       </TouchableOpacity>
       <Text>
-         { context.authState.nombre } 
+         {/* { context.authState.nombre }  */}
       </Text>
     </View>
   )
