@@ -5,7 +5,7 @@ import { styles } from '../theme/theme'
 
 const ImageList = ({photos}) => {
 
-    const renderItem = (({item}) => <CardImage image={item.url}/>)
+    const renderItem = (({item, index}) => <CardImage image={item}/>)
 
   return (
     
@@ -13,7 +13,6 @@ const ImageList = ({photos}) => {
       <FlatList
       data={photos}
       renderItem={renderItem}
-      keyExtractor={item => item._id}
       numColumns={2}
       />
     </View>

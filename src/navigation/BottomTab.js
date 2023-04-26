@@ -6,6 +6,9 @@ import Inicio from "../screens/Inicio";
 import Usuarios from "../screens/Usuarios";
 import { Ionicons } from '@expo/vector-icons';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Image, Text } from "react-native";
+import Icono from '../images/Pfp.png'
+import { styles } from "../theme/theme";
 
 const Tab = createBottomTabNavigator();
 
@@ -31,14 +34,15 @@ const BottomTab = () => {
                 name="Multimedia" 
                 component={Multimedia}
                 options={{
+                    headerLeft: () => <Image source={Icono} style={styles.icono}/>,
+                    title: "Dronautica",
                     tabBarLabel: 'Multimedia',
                     tabBarIcon: ({color, size}) => (
                     <Ionicons name="flower-outline" size={26} color={color} />
                     ),
-                    headerShown: false,
                 }} 
             />
-            <Tab.Screen 
+            {/* <Tab.Screen 
                 name="Usuarios" 
                 component={Usuarios}
                 options={{
@@ -48,7 +52,7 @@ const BottomTab = () => {
                     ),
                     headerShown: false,
                 }} 
-            />
+            /> */}
         </Tab.Navigator>
     );
 };

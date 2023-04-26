@@ -10,12 +10,12 @@ const Home = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text_inicio}>Inicio</Text>
-      <Image style={styles.home_foto}
+      <Image style={styles.inicio_image}
       source={{
         uri: INICIO_IMAGE
       }}
       />
-      <Text>Nombre: { context.authState.nombre }</Text>
+      <Text style={styles.text_nombre}>Nombre: { context.authState.nombre }</Text>
       <TouchableOpacity
         style={styles.home_boton}
         onPress={() => {

@@ -36,7 +36,8 @@ export const styles = StyleSheet.create({
         width: '49.5%',
         margin: 4,
         justifyContent:'space-between',
-        
+        borderWidth: 0,
+        borderRadius: 5
     },
     container2:{
         flex: 1,
@@ -109,5 +110,48 @@ export const styles = StyleSheet.create({
 		height:200,
 		borderRadius:100,
 		marginVertical:30,
+	},
+    icono:{
+        width: 37,
+        height: 37,
+        marginStart: 10,
+        marginLeft: 10,
+        borderRadius: 5,
+    },
+    image_screen:{
+        height: 350,
+    },
+    container_image:{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    container_buttons: {
+        paddingVertical: 18,
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '100%'
+    },
+    boton_descargar:{
+        backgroundColor: colores.uno
+    },
+    boton_borrar:{
+        backgroundColor: "#CB3234"
+    },
+    home_boton: {
+		backgroundColor: "#CB3234",
+		width: 100,
+		height: 40,
+		borderRadius: 10,
+		justifyContent: 'center',
+		marginTop: 10,
+	},
+	home_boton_texto:{
+		fontSize: 15,
+		color: colores.seis,
+		fontWeight: 'bold',
+		textAlign: 'center',
 	},
 })

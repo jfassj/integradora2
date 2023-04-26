@@ -22,7 +22,7 @@ const Login = (props) => {
 
    const handleSubmit = async () => {
     console.log('AQUI3');
-       await axios.post('http://192.168.1.3:5000/authenticate', datos)
+       await axios.post('http:/192.168.1.3:5000/authenticate', datos)
        
        .then(function (response) {
          // handle success
